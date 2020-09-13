@@ -1,0 +1,123 @@
+
+<!--
+
+LED AND MAGIC MIRROR PAYPHONE Project
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY OR FITNESS
+FOR A PARTICULAR PURPOSE.  IT MAY INFRINGE THE INTELLECTUAL PROPERTY RIGHTS OF OTHERS
+IN WHICH CASE I'D BE IN TROUBLE AS WELL AS YOU BUT I WILL NOT DEFEND OR INDEMNIFY YOU
+FOR ANY LOSS YOU MAY INCUR.
+
+WITHOUT LIMITING THE FOREGOING, IF THE SOFTWARE DOESN'T WORK, YOU ARE ON YOUR OWN.
+SAME IF YOU DIE OR ARE INJURED USING IT, THOUGH I'D BE INTERESTED IN HEARING HOW THAT HAPPENED.  
+UNLESS YOU STEP ON A LEGO BRICK I SUPPOSE. STILL, THAT WOULDN'T BE MY FAULT, REALLY.
+
+ANY USE OF THIS SOFRWARE MEANS YOU HAVE AGREED TO ALL THAT.  SO THERE.
+
+-->
+
+
+<html charset="UTF-8">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/home/pi/apacheHomepage/styles.css">
+    <link rel="apple-touch-icon" href="/home/pi/apacheHomepage/phone_Icon120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/home/pi/apacheHomepage/phone_Icon180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/home/pi/apacheHomepage/phone_Icon152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/home/pi/apacheHomepage/phone_Icon167.png" />
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<style>
+  /* demo stuff */
+
+body {
+  background:#000;
+  color:#FFF;
+  padding:3em;
+  text-align: center;
+}
+
+.serifB {
+  font-family: "Courier New", Times, serif;
+  font-size: 130%;
+  z-index: 1;
+
+}
+
+.serifS {
+  font-family: "Courier New", Times, serif;
+  font-size: 110%;
+  z-index: 1;
+
+}
+
+div {border:1px dashed #666;z-index: 2;}
+
+/* container */
+
+.ledborder {
+  padding:34px;
+  position:relative;
+  line-height:38px;
+}
+
+.ledborder:before {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  content: ""; z-index:-1;
+  width: 100%; height: 100%;
+  box-sizing:border-box;
+  /* the border image */
+  border-style: solid;
+  border-width: 42px;
+  border-height: 42px;
+  border-image: url('led.png') 42 round;
+  -moz-border-image: url(http://puu.sh/ocvuq/d01cc89c15.png) 34 round;
+  -webkit-border-image: url(http://puu.sh/ocvuq/d01cc89c15.png) 34 round;
+  -o-border-image: url(http://puu.sh/ocvuq/d01cc89c15.png) 34 round;
+  
+  animation: ledFlash 1.5s infinite;
+  
+}
+
+/* animation */
+
+@keyframes ledFlash {
+  50% { opacity:.3; }
+}
+
+.bg-picOne {
+  
+  position: absolute;
+  top: 70%;
+  left: 40%;
+ 
+  
+}
+</style>
+  </head>
+  <body>
+   <p class = "serifB">magic mirror payphone</p>
+ <br><br> 
+
+<div class="ledborder">
+  <a href="192.168.2.12:5000" class="serifS" role="button">blinky lights</a>
+
+  
+</div>
+<br><br> 
+<br><br> 
+
+
+ <div class="bg-picOne">
+     <a href="192.168.2.12:1234">
+
+  <img src="RadioFT.png" alt="Alarm_One">
+  </a>
+  </div>
+
+      </body>
+    
+  
+</html>
